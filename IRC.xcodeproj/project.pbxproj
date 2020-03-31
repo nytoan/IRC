@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		922B637E2433B96100A33C13 /* IRCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B637D2433B96100A33C13 /* IRCUser.swift */; };
+		922B63802433B96D00A33C13 /* IRCChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B637F2433B96D00A33C13 /* IRCChannel.swift */; };
 		9B018DB61F4825D600760D14 /* IRC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B018DAC1F4825D600760D14 /* IRC.framework */; };
 		9B018DBD1F4825D600760D14 /* IRC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B018DAF1F4825D600760D14 /* IRC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9B018DC81F48264A00760D14 /* IRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B018DC61F48264900760D14 /* IRC.swift */; };
+		9B018DC81F48264A00760D14 /* IRCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B018DC61F48264900760D14 /* IRCServer.swift */; };
 		9B018DC91F48264A00760D14 /* IRCServerInputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B018DC71F48264A00760D14 /* IRCServerInputParser.swift */; };
 		9B018DCC1F48265D00760D14 /* IRCServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B018DCA1F48265D00760D14 /* IRCServerTests.swift */; };
 		9B018DCD1F48265D00760D14 /* IRCServerInputParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B018DCB1F48265D00760D14 /* IRCServerInputParserTests.swift */; };
@@ -26,12 +28,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		922B637D2433B96100A33C13 /* IRCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRCUser.swift; sourceTree = "<group>"; };
+		922B637F2433B96D00A33C13 /* IRCChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRCChannel.swift; sourceTree = "<group>"; };
 		9B018DAC1F4825D600760D14 /* IRC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IRC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B018DAF1F4825D600760D14 /* IRC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRC.h; sourceTree = "<group>"; };
 		9B018DB01F4825D600760D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B018DB51F4825D600760D14 /* IRCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IRCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B018DBC1F4825D600760D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B018DC61F48264900760D14 /* IRC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRC.swift; sourceTree = "<group>"; };
+		9B018DC61F48264900760D14 /* IRCServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCServer.swift; sourceTree = "<group>"; };
 		9B018DC71F48264A00760D14 /* IRCServerInputParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCServerInputParser.swift; sourceTree = "<group>"; };
 		9B018DCA1F48265D00760D14 /* IRCServerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCServerTests.swift; sourceTree = "<group>"; };
 		9B018DCB1F48265D00760D14 /* IRCServerInputParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCServerInputParserTests.swift; sourceTree = "<group>"; };
@@ -77,7 +81,9 @@
 		9B018DAE1F4825D600760D14 /* IRC */ = {
 			isa = PBXGroup;
 			children = (
-				9B018DC61F48264900760D14 /* IRC.swift */,
+				9B018DC61F48264900760D14 /* IRCServer.swift */,
+				922B637D2433B96100A33C13 /* IRCUser.swift */,
+				922B637F2433B96D00A33C13 /* IRCChannel.swift */,
 				9B018DC71F48264A00760D14 /* IRCServerInputParser.swift */,
 				9B018DAF1F4825D600760D14 /* IRC.h */,
 				9B018DB01F4825D600760D14 /* Info.plist */,
@@ -206,8 +212,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B018DC81F48264A00760D14 /* IRC.swift in Sources */,
+				9B018DC81F48264A00760D14 /* IRCServer.swift in Sources */,
 				9B018DC91F48264A00760D14 /* IRCServerInputParser.swift in Sources */,
+				922B63802433B96D00A33C13 /* IRCChannel.swift in Sources */,
+				922B637E2433B96100A33C13 /* IRCUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

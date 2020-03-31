@@ -8,54 +8,6 @@
 
 import Foundation
 
-public struct IRCUser {
-    public let username: String
-    public let realName: String
-    public let nick: String
-    
-    public init(username: String, realName: String, nick: String) {
-        self.username = username
-        self.realName = realName
-        self.nick = nick
-    }
-}
-
-public class IRCChannel {
-    public var delegate: IRCChannelDelegate? = nil {
-        didSet {
-            guard let delegate = delegate else {
-                return
-            }
-            
-            buffer.forEach { (line) in
-                delegate.didRecieveMessage(self, message: line)
-            }
-            buffer = []
-        }
-    }
-    public let name: String
-    public let server: IRCServer
-    private var buffer = [String]()
-    
-    public init(name: String, server: IRCServer) {
-        self.name = name
-        self.server = server
-    }
-    
-    
-    func receive(_ text: String) {
-        if let delegate = self.delegate {
-            delegate.didRecieveMessage(self, message: text)
-        } else {
-            buffer.append(text)
-        }
-    }
-    
-    public func send(_ text: String) {
-        server.send("PRIVMSG #\(name) :\(text)")
-    }
-}
-
 public class IRCServer {
     public var delegate: IRCServerDelegate? {
         didSet {
@@ -108,7 +60,6 @@ public class IRCServer {
         let input = IRCServerInputParser.parseServerMessage(message)
         switch input {
         case .serverMessage(_, let message):
-            print(message)
             if let delegate = self.delegate {
                 delegate.didRecieveMessage(self, message: message)
             } else {
