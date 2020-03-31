@@ -15,10 +15,9 @@ struct IRCServerInputParser {
         }
         
         if message.hasPrefix(":") {
-            let firstSpaceIndex = message.index(of: " ")!
+            let firstSpaceIndex = message.firstIndex(of: " ")!
             let source = message[..<firstSpaceIndex]
             let rest = message[firstSpaceIndex...].trimmingCharacters(in: .whitespacesAndNewlines)
-            print(source)
             
             if rest.hasPrefix("PRIVMSG") {
                 let remaining = rest[rest.index(message.startIndex, offsetBy: 8)...]
@@ -37,8 +36,6 @@ struct IRCServerInputParser {
                 return .joinMessage(user: user, channel: channel)
             } else{
                 let server = source.trimmingCharacters(in: CharacterSet(charactersIn: ": "))
-                
-                // :development.irc.roundwallsoftware.com 353 mukman = #clearlyafakechannel :mukman @sgoodwin\r\n:development.irc.roundwallsoftware.com 366 mukman #clearlyafakechannel :End of /NAMES list.
                 
                 if rest.hasSuffix(":End of /NAMES list.") {
                     let scanner = Scanner(string: rest)

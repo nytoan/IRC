@@ -3,3 +3,4 @@ build
 *swp
 api_config.json
 Carthage
+xcshareddata
